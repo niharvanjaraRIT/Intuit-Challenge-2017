@@ -2,9 +2,9 @@
 
 The project contains 3 files which are as follows:
 
-DataMining.py
-FeatureExtraction.py
-Relationships.py
+* DataMining.py
+* FeatureExtraction.py
+* Relationships.py
 
 ## Requirements 
 

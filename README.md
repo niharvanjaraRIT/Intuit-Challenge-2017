@@ -1,11 +1,15 @@
-# Instructions
+## Instructions
 
-The project contains * files which are as follows:
+The project contains 3 files which are as follows:
 
-# Requirements 
+DataMining.py
+FeatureExtraction.py
+Relationships.py
+
+## Requirements 
 
 Python3 is required.
 
-# Project Methodology
+## Project Methodology
 
-# Analysis and Results
+## Analysis and Results

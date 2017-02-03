@@ -1,5 +1,3 @@
-# Intuit-Challenge-2017
-
 # Instructions
 
 # Requirements 

@@ -1,6 +1,6 @@
 # Instructions
 
-The main folder Intuit Challenge (2017) contains 5 folders which are stated below as follows.
+The main folder **_Intuit Challenge (2017)_** contains 5 folders which are stated below as follows.
 
 **“py”** which consists of 3 python executables (.py)
 

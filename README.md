@@ -78,6 +78,12 @@ Hence now the tables were transformed such that it consisted of one row (unique 
 
 A method to reduce the number of features in this problem is to club features which are highly correlated into a single feature. Hence correlation matrix was calculated between every pair of vendors and vendors having positive correlation greater than 0.7 were merged into a single category.
 
+A small sample of the correlation matrix of the features is shown  below:
+ 
+![alt text](https://github.com/niharvanjaraRIT/Intuit-Challenge-2017/blob/master/Intuit%20Challenge%20(2017)/images/correlated_features.png)
+
+As shown above green shows high  positive correlation whereas red shows negative correlation. All pairs which showed high correlation were merged. We can see above that books and atheletic equipments share a slight negative correlation. where it is obvious that any feature is correlated with itself hence the value is 1.
+
 Each category consists of those vendors which have an inter-correlation of at least 0.7, for each category some of the features are listed here because of the long list. You can view all the categories and their sub-categories by running the code. The partial categories are shown and described below.
 
 **Category 1 (Fitness/Sports)**	

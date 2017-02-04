@@ -6,8 +6,11 @@ The main folder Intuit Challenge (2017) contains 4 folders which are stated belo
 
 * Data_mining.py - This contains 
 * Feature_extraction.py
-* User_correlation.py
-  
+* user_correlation.py
+
+Execute the files in the top-down order hence as results of from prior executions are used. Hence first
+execute data_mining.py then feature_extraction.py and then user_correlation.py 
+
 **“phases”** folder consists of .csv and .xlsx which are intermediate results which can be viewed.
 There are four files which are as follows
 	
@@ -33,21 +36,22 @@ Python 3.5.2 or greater Python 3.0 should also work besides that a number of lib
 required to be installed in order for the code to run such as numpy1.11.1, scipy0.18.1, pandas0.18.1, matplotlib, scikit-learn0.17.1
 and seaborn0.7.1 (used for visualization)
 
-[https://pypi.python.org/pypi/numpy/1.11.1](https://pypi.python.org/pypi/numpy/1.11.1)
+[https://pypi.python.org/pypi/numpy/1.11.1](https://pypi.python.org/pypi/numpy/1.11.1) (Numpy)
 
-[https://pypi.python.org/pypi/scipy](https://pypi.python.org/pypi/scipy)
+[https://pypi.python.org/pypi/scipy](https://pypi.python.org/pypi/scipy) (Scipy)
 
-[https://pypi.python.org/pypi/pandas/0.18.1/](https://pypi.python.org/pypi/pandas/0.18.1/)
+[https://pypi.python.org/pypi/pandas/0.18.1/](https://pypi.python.org/pypi/pandas/0.18.1/)  (Pandas)
 
-[https://pypi.python.org/pypi/matplotlib](https://pypi.python.org/pypi/matplotlib)
+[https://pypi.python.org/pypi/matplotlib](https://pypi.python.org/pypi/matplotlib)	(Matplotlib)
 
-[http://scikit-learn.org/0.17/install.html](ttp://scikit-learn.org/0.17/install.html)
+[http://scikit-learn.org/0.17/install.html](ttp://scikit-learn.org/0.17/install.html)  (Scikit-Learn)
 
-[https://pypi.python.org/pypi/seaborn/](https://pypi.python.org/pypi/seaborn/)
+[https://pypi.python.org/pypi/seaborn/](https://pypi.python.org/pypi/seaborn/)  (Seaborn)
 
+Seaborn is used for visualization.
 
 Please check all the files are contained in the folder 
-# Methodology:
+# Methodology
 
 As described in the problem statement the goal of this problem is to find relevant features in the data in order to describe any user based on their transactional data.
 
@@ -60,13 +64,19 @@ Features which provided very little information of the user were dropped and not
 Music this new feature is encoded as either ‘Yes’ or ‘No’. The final new table consists of 100 rows and 25 Columns (excluding Auth_id). Every row describes an instance of the user and every column describes the feature/attribute of the user.
 After transforming the data, the compatibility of the users was calculated and a heatmap plot was generated in order to better understand the compatibility of the users. For the compatibility only thr
 
-# Analysis and Results. 
+# Analysis and Results 
 
 No missing values were found in any of the user transaction files and the values contained in each attribute are of a single type. The data is found to be clean and consistent but there are still semantic errors in the tables for example the value of date are not in correct range (eg. 12/32/2014).
 
-Distinct values for each feature for all users gave some vital information for example it showed that all people lived in California (“CA”).  As Location does not contain any other values other than “CA” we can safely remove this feature as this feature imparts very little information to differentiate users from each other. The number of unique “auth_ids” found were 100 which corroborates the fact that there are 100 users. 640 different days were found in the period of two years when the users made the purchases. 100 unique vendors were found. Date was dropped from the dataframes as there were too many days and grouping users based on date did not give much information besides the time periods of purchases made. 
+Distinct values for each feature for all users gave some vital information for example it showed that all people lived in California (“CA”).  As Location does not contain any other values other than “CA” we can safely remove this feature as this feature imparts very little information to differentiate users from each other. 
 
-To identify lifestyles of users the only attribute valuable in this scenario is “Vendor” and the associated “Amount” spent on each vendor. Hence the tables were grouped based on the distinct vendors. Once grouped based on vendor sum of the amounts were for each distinct vendor, giving the total amount of money spent on each vendor for a period of two years. Hence now the tables were transformed such that it consisted of one row (unique user) and the columns now represented the 100 vendors. Hence there were now 100 tables of dimensions 1 x 100. Values in the table where users did not purchase the product were filled with 0. The 100 transformed tables of size 1x100 were merged to create a new table of size 100 x 100 where every row is now a unique user and every column is a feature. Even though the size of the dataset is reduced and merged to one table there still are too many features which still makes it difficult to differentiate users efficiently. A method to reduce the number of features in this problem is to club features which are highly correlated into a single feature. Hence correlation matrix was calculated between every pair of vendors and vendors having positive correlation greater than 0.7 were merged into a single category.
+The number of unique “auth_ids” found were 100 which corroborates the fact that there are 100 users. 640 different days were found in the period of two years when the users made the purchases. 100 unique vendors were found. Date was dropped from the dataframes as there were too many days and grouping users based on date did not give much information besides the time periods of purchases made. 
+
+To identify lifestyles of users the only attribute valuable in this scenario is “Vendor” and the associated “Amount” spent on each vendor. Hence the tables were grouped based on the distinct vendors. Once grouped based on vendor sum of the amounts were for each distinct vendor, giving the total amount of money spent on each vendor for a period of two years. 
+
+Hence now the tables were transformed such that it consisted of one row (unique user) and the columns now represented the 100 vendors. Hence there were now 100 tables of dimensions 1 x 100. Values in the table where users did not purchase the product were filled with 0. The 100 transformed tables of size 1x100 were merged to create a new table of size 100 x 100 where every row is now a unique user and every column is a feature. Even though the size of the dataset is reduced and merged to one table there still are too many features which still makes it difficult to differentiate users efficiently. 
+
+A method to reduce the number of features in this problem is to club features which are highly correlated into a single feature. Hence correlation matrix was calculated between every pair of vendors and vendors having positive correlation greater than 0.7 were merged into a single category.
 
 Each category consists of those vendors which have an inter-correlation of at least 0.7, for each category some of the features are listed here because of the long list. You can view all the categories and their sub-categories by running the code. The partial categories are shown and described below.
 

@@ -4,9 +4,16 @@ The main folder Intuit Challenge (2017) contains 4 folders which are stated belo
 
 **“py”** which consists of 3 python executables (.py)
 
-* Data_mining.py - This contains 
-* Feature_extraction.py
-* user_correlation.py
+* data_mining.py - This file transforms the data and writes it into a file Reduced-Data.csv
+  which is used by feature_extraction.py
+
+* feature_extraction.py - This file uses Reduced-Data.csv as its input and extracts features.
+  It returns the final result in the form of Final-Data.csv
+  
+* user_correlation.py - This file uses Reduced-Data.csv as its input to generate a plot and the 
+  correlation between users. The correlation matrix is in the form of User-Correlations.csv
+  NOTE: the User-Correlations.csv is a plain file and the result is converted into a xlsx for visualization
+  the code does not generate the color gradients for the xlsx file.
 
 Execute the files in the top-down order hence as results of from prior executions are used. Hence first
 execute data_mining.py then feature_extraction.py and then user_correlation.py 

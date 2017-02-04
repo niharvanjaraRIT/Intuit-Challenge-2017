@@ -20,7 +20,7 @@ execute data_mining.py then feature_extraction.py and then user_correlation.py
 
 
 **“phases”** folder consists of .csv and .xlsx which are intermediate results which can be viewed.
-There are four files which are as follows
+There are five files which are as follows
 	
 * Unique-Vendors.csv
 * Transformed-Data.csv

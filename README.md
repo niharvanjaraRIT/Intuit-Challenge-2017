@@ -1,22 +1,23 @@
 # Instructions
 
-The main folder Intuit Challenge (2017) contains 4 folders which are stated below as follows.
+The main folder Intuit Challenge (2017) contains 5 folders which are stated below as follows.
 
 **“py”** which consists of 3 python executables (.py)
 
-* data_mining.py - This file transforms the data and writes it into a file Reduced-Data.csv
+* **data_mining.py** - This file transforms the data and writes it into a file Reduced-Data.csv
   which is used by feature_extraction.py
 
-* feature_extraction.py - This file uses Reduced-Data.csv as its input and extracts features.
+* **feature_extraction.py** - This file uses Reduced-Data.csv as its input and extracts features.
   It returns the final result in the form of Final-Data.csv
   
-* user_correlation.py - This file uses Reduced-Data.csv as its input to generate a plot and the 
+* **user_correlations.py** - This file uses Reduced-Data.csv as its input to generate a plot and the 
   correlation between users. The correlation matrix is in the form of User-Correlations.csv
-  NOTE: the User-Correlations.csv is a plain file and the result is converted into a xlsx for visualization
-  the code does not generate the color gradients for the xlsx file.
+  **NOTE: the User-Correlations.csv is a plain file and the result is converted into a xlsx for visualization
+  the code does not generate the color gradients for the xlsx file.**
 
-Execute the files in the top-down order hence as results of from prior executions are used. Hence first
-execute data_mining.py then feature_extraction.py and then user_correlation.py 
+the files above should be executed in the top-down order as results from prior executions are used. Hence first
+execute data_mining.py then feature_extraction.py and then user_correlation.py
+
 
 **“phases”** folder consists of .csv and .xlsx which are intermediate results which can be viewed.
 There are four files which are as follows
@@ -35,6 +36,11 @@ There are four files which are as follows
 **“images”** folder contains plots and visualized tables
 
 
+**"data"** folder consists of all the 100 .csv files provided by intuit.
+
+
+
+**_Please check all the files are contained in  every folder_** before moving forward
 
 # Requirements 
 
@@ -57,7 +63,15 @@ and seaborn0.7.1 (used for visualization)
 
 Seaborn is used for visualization.
 
-Please check all the files are contained in the folder 
+# Execution
+
+* To execute the files set up the python(3.0 >) interpreter with the following modules working.
+* Set up the project and copy files  **data_mining.py**  , **feature_extraction.py** and **user_correlations.py** 
+  into your workspace. 
+* Copy the **"data"** folder into your workspace. The folder contains 100 (.csv) files
+* Change the path in all of the .py files so that they are able to access the .csv files
+
+
 # Methodology
 
 As described in the problem statement the goal of this problem is to find relevant features in the data in order to describe any user based on their transactional data.

@@ -172,8 +172,11 @@ Free utilities – Does he have to pay for the utilities.
 
 The final table consists of all these attributes giving us 100 rows (users) and 25 columns (features) excluding user_id ( Auth_id )
 
-#BONUS
+# Bonus
 For the bonus to find the how compatible the users are we can create a correlation matrix between every pair of users. The correlation matrix is a 100 x 100 matrix. The values of the matrix range from -1 to 1 for this problem negative values are rounded to zero. Hence the final values in the matrix are from 0 to 1 where the closer the value to 1 the more similarities the users emulate.
 
-The similarity matrix is plotted below.
+The correlation matrix between users is plotted below.
+
+![alt text](https://github.com/niharvanjaraRIT/Intuit-Challenge-2017/blob/master/Intuit%20Challenge%20(2017)/images/correlated_users.png)
+
 

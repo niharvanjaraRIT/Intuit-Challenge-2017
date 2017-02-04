@@ -69,7 +69,11 @@ Seaborn is used for visualization.
 * Set up the project and copy files  **data_mining.py**  , **feature_extraction.py** and **user_correlations.py** 
   into your workspace. 
 * Copy the **"data"** folder into your workspace. The folder contains 100 (.csv) files
-* Change the path in all of the .py files so that they are able to access the .csv files
+* Change the path in all of the .py files so that they are able to access the .csv files. Comments are added in the .py
+  files to show where path changes should be made.
+* Run the .py files in the following order data_mining.py , feature_extraction.py then user_correlations.py
+
+**_Note: data_mining.py takes some amount of time._**
 
 
 # Methodology

@@ -95,7 +95,7 @@ Distinct values for each feature for all users gave some vital information for e
 
 The number of unique “auth_ids” found were 100 which corroborates the fact that there are 100 users. 640 different days were found in the period of two years when the users made the purchases. 100 unique vendors were found. Date was dropped from the dataframes as there were too many days and grouping users based on date did not give much information besides the time periods of purchases made. 
 
-To identify lifestyles of users the only attribute valuable in this scenario is “Vendor” and the associated “Amount” spent on each vendor. Hence the tables were grouped based on the distinct vendors. Once grouped based on vendor sum of the amounts were for each distinct vendor, giving the total amount of money spent on each vendor for a period of two years. 
+To identify lifestyles of users the only attribute valuable in this scenario is “Vendor” and the associated “Amount” spent on each vendor. Hence the tables were grouped based on the distinct vendors. Once grouped based on vendor, sum of the amounts were taken for each distinct vendor, giving the total amount of money spent on each vendor for a period of two years. 
 
 Hence now the tables were transformed such that it consisted of one row (unique user) and the columns now represented the 100 vendors. Hence there were now 100 tables of dimensions 1 x 100. Values in the table where users did not purchase the product were filled with 0. The 100 transformed tables of size 1x100 were merged to create a new table of size 100 x 100 where every row is now a unique user and every column is a feature. Even though the size of the dataset is reduced and merged to one table there still are too many features which still makes it difficult to differentiate users efficiently. 
 
@@ -105,7 +105,7 @@ A small sample of the correlation matrix of the features is shown  below:
  
 ![alt text](https://github.com/niharvanjaraRIT/Intuit-Challenge-2017/blob/master/Intuit%20Challenge%20(2017)/images/correlated_features.png)
 
-As shown above green shows high  positive correlation whereas red shows negative correlation. All pairs which showed high correlation were merged. We can see above that books and atheletic equipments share a slight negative correlation. where it is obvious that any feature is correlated with itself hence the value is 1.
+As shown above green shows high  positive correlation whereas red shows negative correlation. All pairs which showed high correlation were merged. We can see above that books and atheletic equipments share a slight negative correlation. Whereas it is obvious that any feature is correlated with itself hence the value is 1.
 
 Each category consists of those vendors which have an inter-correlation of at least 0.7, for each category some of the features are listed here because of the long list. You can view all the categories and their sub-categories by running the code. The partial categories are shown and described below.
 
@@ -174,24 +174,24 @@ Users of this category either like staying home or are too old to go out and hav
 * On Demand TV
 * Pet Supply - Cat Food
 
-The above categories were found due to correlations in the correlation matrix. But even after merging these categories into the 6 categories there still were many vendors which were not correlated. There were still 50 categories remaining after the transformation.
+The above categories were found due to correlations in the correlation matrix. But even after merging these categories into the 6 categories there still were many vendors which were not correlated. There were still around 50 categories remaining after the transformation.
 
 To reduce more features. Features were looked manually and clubbed based on intuition. For example, there were 9 vendors related to transport and travel. All these were clubbed into one as they shared similar amounts of expenditure for each user. Similarly, other categories like housing, groceries, student loans, utilities were created and vendors sharing similar cost and types were merged into the same category. This reduced the features to just 15. Where each feature is a category consisting of net expenditure/savings for the 2-year period. To see which features helped differentiate users, variance of each feature was calculated and features with variance almost 0 were dropped as they did not vary much internally which did help to achieve the purpose of differentiating users. Before calculating the variance l2 normalization is performed in order to control the range of the variance. Housing, travel and restaurants were dropped as there was almost no variance. It can be concluded that these are common expenses that every person endures and are roughly the same for every user hence can be excluded.
 
 Some new features were also then extracted in order to answer questions inferred from the table. 5 features are created which are described as follows. The feature values were encoded as “YES” or “NO”
 
-Hobbies (Fitness/Sports) – is the person interested into fitness and health
-Hobbies (Art/Music) – is the person interested in art and music
-Hobbies (Books/Gaming) is the person interested in books, gaming and science.
-Hobbies (Socialize) – does the person like to mingle with people
-Likes Indoors – does the person like to stay indoors
-Parent – is the user a parent
-Divorcee – is the user a divorcee
-Student – is the user a student 
-Has credit card – does the user own/use a credit card
-Unpunctual – does the user pay late
-Income Strata – Does the user belong to high income, medium income, low income encoded as “HIGH”,” MEDIUM”,” LOW”
-Free utilities – Does he have to pay for the utilities.
+* Hobbies (Fitness/Sports) – is the person interested into fitness and health
+* Hobbies (Art/Music) – is the person interested in art and music
+* Hobbies (Books/Gaming) is the person interested in books, gaming and science.
+* Hobbies (Socialize) – does the person like to mingle with people
+* Likes Indoors – does the person like to stay indoors
+* Parent – is the user a parent
+* Divorcee – is the user a divorcee
+* Student – is the user a student 
+* Has credit card – does the user own/use a credit card
+* Unpunctual – does the user pay late
+* Income Strata – Does the user belong to high income, medium income, low income encoded as “HIGH”,” MEDIUM”,” LOW”
+* Free utilities – Does he have to pay for the utilities.
 
 The final table consists of all these attributes giving us 100 rows (users) and 25 columns (features) excluding user_id ( Auth_id )
 
@@ -202,4 +202,4 @@ The correlation matrix between users is plotted below.
 
 ![alt text](https://github.com/niharvanjaraRIT/Intuit-Challenge-2017/blob/master/Intuit%20Challenge%20(2017)/images/correlated_users.png)
 
-
+For queries contact niv1676@g.rit.edu

@@ -38,8 +38,6 @@ There are four files which are as follows
 
 **"data"** folder consists of all the 100 .csv files provided by intuit.
 
-
-
 **_Please check all the files are contained in  every folder_** before moving forward
 
 # Requirements 
@@ -68,7 +66,8 @@ Seaborn is used for visualization.
 * To execute the files set up the python(3.0 >) interpreter with the following modules working.
 * Set up the project and copy files  **data_mining.py**  , **feature_extraction.py** and **user_correlations.py** 
   into your workspace. 
-* Copy the **"data"** folder into your workspace. The folder contains 100 (.csv) files
+* Copy the **"data"** folder into your workspace. The folder contains 100 (.csv) files. A better way to do this is to rename the folder 
+  "transactinoal-data" to "data" and add it to your workspace instead of downloading the data folder. 
 * Change the path in all of the .py files so that they are able to access the .csv files. Comments are added in the .py
   files to show where path changes should be made.
 * Run the .py files in the following order data_mining.py , feature_extraction.py then user_correlations.py
@@ -80,14 +79,13 @@ Seaborn is used for visualization.
 
 As described in the problem statement the goal of this problem is to find relevant features in the data in order to describe any user based on their transactional data.
 
-To get an intuitive understanding of the data a couple of files (.csv) of random users was opened in Microsoft Excel and explored. Visually the data looked clean. For deeper understanding python was used to explore data after exploration ETL was performed on the data as described below.  
+To get an intuitive understanding of the data a couple of files (.csv) of random users was opened in Microsoft Excel and explored. Visually the data looked clean. For deeper understanding python was used to explore data, after exploration ETL was performed on the data as described below.  
 
 The files were read into Pandas Dataframe and the objects of the frame were stored in a list. Exploratory and Statistical analysis were performed on the Dataframes inorder to find relevant features and to check discrepancy in the data. The data was then transformed in order to serve the goal. 
 
 Features which provided very little information of the user were dropped and not included in the new table. Feature Extraction was performed on the new table and new discrete features of the users were extrapolated. For example, if someone is interested into Art and 
-
 Music this new feature is encoded as either ‘Yes’ or ‘No’. The final new table consists of 100 rows and 25 Columns (excluding Auth_id). Every row describes an instance of the user and every column describes the feature/attribute of the user.
-After transforming the data, the compatibility of the users was calculated and a heatmap plot was generated in order to better understand the compatibility of the users. For the compatibility only thr
+After transforming the data, the compatibility of the users was calculated and a heatmap plot was generated in order to better understand the compatibility of the users.
 
 # Analysis and Results 
 
